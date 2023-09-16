@@ -29,6 +29,7 @@ class Book{
     constructor(public title: string, public author: string
         ,public isLoaded: boolean = false
         ,public isAvailable: string
+        ,public loantimedays: number=7
         , public loandate:Date
         ,public category: string) {}
 }
@@ -112,7 +113,7 @@ class Library implements ILoadManager {
 
         const currentDate = new Date();
         const daysLate = Math.max(0, currentDate.getDate() - book.loandate.getDate());
-        if( daysLate>0){
+        if( daysLate>book.loantimedays){
             const multa = daysLate * 1; 
             this.logger.logInfo(`${book.title} returned ${daysLate} days late.`);
             this.logger.logInfo(`Multa: $${multa}`);
