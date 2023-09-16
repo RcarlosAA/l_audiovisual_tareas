@@ -114,7 +114,7 @@ class Library implements ILoadManager {
         const currentDate = new Date();
         const daysLate = Math.max(0, currentDate.getDate() - book.loandate.getDate());
         if( daysLate>book.loantimedays){
-            const multa = daysLate * 1; 
+            const multa = daysLate-book.loantimedays * 1; 
             this.logger.logInfo(`${book.title} returned ${daysLate} days late.`);
             this.logger.logInfo(`Multa: $${multa}`);
         }
