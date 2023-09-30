@@ -1,0 +1,5 @@
+1. crar una carpeta utils con los siguientes archivos Errors.ts
+ clase para manejo de errores Not found y Validation Errors Eventemitter.tscrar 
+
+ crear la logica para la escuchha de eventos
+ cuando se ejecuta alguna acccion por ejemplo creacion de un libro
